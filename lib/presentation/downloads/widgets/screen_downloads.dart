@@ -8,9 +8,9 @@ import 'package:netflix_clone/presentation/Widgets(common)/app_bar_widget.dart';
 class ScreenDownloads extends StatelessWidget {
   ScreenDownloads({super.key});
   final List imageList = [
-    "https://media.themoviedb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
-        "https://media.themoviedb.org/t/p/w440_and_h660_face/wWba3TaojhK7NdycRhoQpsG0FaH.jpg"
-        "https://media.themoviedb.org/t/p/w440_and_h660_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpgr"
+    "https://media.themoviedb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+    "https://media.themoviedb.org/t/p/w440_and_h660_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+    "https://media.themoviedb.org/t/p/w440_and_h660_face/wWba3TaojhK7NdycRhoQpsG0FaH.jpg"
   ];
 
   @override
@@ -26,19 +26,7 @@ class ScreenDownloads extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              constWidth,
-              Icon(
-                Icons.settings,
-                color: kYelloB,
-              ),
-              constWidth,
-              Text('Smart Downloads'),
-              constWidth,
-            ],
-          ),
+          const _smartDownloads(),
           Text('Introducing Downloads For You'),
           Text(
             "we'll Download a Personalized selection of Movies & Shows for you, So there's always something to watch on your Device",
@@ -57,17 +45,19 @@ class ScreenDownloads extends StatelessWidget {
                 DownloadsImageWidget(
                   imageList: imageList[0],
                   size: size,
-                  margin: EdgeInsets.only(left: 40),
+                  margin: EdgeInsets.only(left: 150),
+                  angle: 20,
                 ),
                 DownloadsImageWidget(
                   imageList: imageList[1],
                   size: size,
-                  margin: EdgeInsets.only(right: 40),
+                  margin: EdgeInsets.only(right: 150),
+                  angle: -20,
                 ),
                 DownloadsImageWidget(
-                  imageList: imageList[0],
+                  imageList: imageList[2],
                   size: size,
-                  margin: EdgeInsets.only(left: 0),
+                  margin: EdgeInsets.only(bottom: 5),
                 ),
               ],
             ),
@@ -90,6 +80,29 @@ class ScreenDownloads extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _smartDownloads extends StatelessWidget {
+  const _smartDownloads({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        constWidth,
+        Icon(
+          Icons.settings,
+          color: kYelloB,
+        ),
+        constWidth,
+        Text('Smart Downloads'),
+        constWidth,
+      ],
     );
   }
 }
