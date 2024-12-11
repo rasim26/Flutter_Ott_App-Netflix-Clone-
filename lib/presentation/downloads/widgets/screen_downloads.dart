@@ -37,9 +37,9 @@ class ScreenDownloads extends StatelessWidget {
 class Section2 extends StatelessWidget {
   Section2({super.key});
   final List imageList = [
-    "https://media.themoviedb.org/t/p/w440_and_h660_face/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "https://media.themoviedb.org/t/p/w440_and_h660_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
-    "https://media.themoviedb.org/t/p/w440_and_h660_face/wWba3TaojhK7NdycRhoQpsG0FaH.jpg"
+    "lib/reference/chair.jpg",
+    "lib/reference/Frame 1.png",
+    "lib/reference/Group 3.jpg"
   ];
 
   @override
@@ -198,7 +198,7 @@ class DownloadsImageWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(imageList),
+            image: AssetImage(imageList),
           ),
         ),
       ),
