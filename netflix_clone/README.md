@@ -1,6 +1,6 @@
-# netflix_clone
+# An Ott App Like Netflix.
 
-A new Flutter project.
+Here, i am trying to make an Ott App like netflix with flutter.
 
 ## Getting Started
 
